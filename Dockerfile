@@ -8,14 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential git curl l
 RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 RUN curl -L https://get.rvm.io | bash -s stable --ruby
 # NOTE: `source` is a build-in in `bash` rather than `sh`.
-# RUN /bin/bash -c "source /usr/local/rvm/scripts/rvm"
-RUN . /usr/local/rvm/scripts/rvm
-
-# Install ruby 1.9.3
-RUN rvm install 1.9.3 \
-    && rvm use 1.9.3 \
-    && rvm rubygems latest \
-    && gem install bundle
+RUN /bin/bash -c "source /usr/local/rvm/scripts/rvm"
+# RUN . /usr/local/rvm/scripts/rvm
 
 # Set locale
 RUN locale-gen en_US.UTF-8
