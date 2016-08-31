@@ -18,6 +18,8 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 
+# Install bundle
+RUN gem install bundle
 # Install gems
 RUN cd /opt/ && git clone https://git.coding.net/GaloisPlusPlus/galoisplusplus.git \
     && cd galoisplusplus \
