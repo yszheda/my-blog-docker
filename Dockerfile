@@ -12,8 +12,7 @@ RUN curl -L https://get.rvm.io | bash -s stable --ruby
 # RUN /bin/bash -c "source /usr/local/rvm/scripts/rvm"
 # RUN . /usr/local/rvm/scripts/rvm
 # RUN chsh -s /bin/bash && source /usr/local/rvm/scripts/rvm
-RUN chsh -s /bin/bash
-RUN source /usr/local/rvm/scripts/rvm
+RUN ln -snf /bin/bash /bin/sh && source /usr/local/rvm/scripts/rvm
 
 # Set locale
 RUN locale-gen en_US.UTF-8
